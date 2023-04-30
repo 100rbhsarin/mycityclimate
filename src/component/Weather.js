@@ -9,7 +9,7 @@ function Weather() {
   const [weather, setWeather] = useState(null);
 
   const handleSearch = async () => {
-    const response = await axios.get(`https://mycityclimet-api.onrender/weather/${city}`);
+    const response = await axios.get(`https://mycityclimet-api.onrender.com/weather/:${city}`);
     const data = response.data;
     const { name, region, country, localtime} = data.location;
     const { text: conditionText, icon } = data.current.condition;
